@@ -1,0 +1,117 @@
+.is-scrolled {
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.14, 0.71, 0.25, 1);
+}
+
+.delay-0\.5s {
+  animation-delay: 0.5s;
+}
+
+@keyframes fade-btt {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fade-btt {
+  transform: translateY(40px);
+  opacity: 0;
+}
+.fade-btt.is-scrolled {
+  animation-name: fade-btt;
+}
+
+@keyframes fade-ttb {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.fade-ttb {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+.fade-ttb.is-scrolled {
+  animation-name: fade-ttb;
+}
+
+@keyframes fade-rtl {
+  0% {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fade-rtl {
+  transform: translateX(40px);
+  opacity: 0;
+}
+.fade-rtl.is-scrolled {
+  animation-name: fade-rtl;
+}
+
+@keyframes fade-ltr {
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.fade-ltr {
+  transform: translateX(-40px);
+  opacity: 0;
+}
+.fade-ltr.is-scrolled {
+  animation-name: fade-ltr;
+}
+
+@keyframes fade-zoomUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.fade-zoomUp {
+  transform: scale(0.8);
+  opacity: 0;
+}
+.fade-zoomUp.is-scrolled {
+  animation-name: fade-zoomUp;
+}
+
+@keyframes fade-zoomDown {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.fade-zoomDown {
+  transform: scale(1.2);
+  opacity: 0;
+}
+.fade-zoomDown.is-scrolled {
+  animation-name: fade-zoomDown;
+}
