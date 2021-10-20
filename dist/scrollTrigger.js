@@ -13,6 +13,7 @@ class scrollTrigger{
       triggerClass:'scroll-trigger',
       scrolledClass:'is-scrolled',
       syncAttr:'data-sync',
+      delayAttr:'data-delay',
       PositionBaseY:'top',
       PositionY:'50%',
       PositionBaseX:'left',
@@ -62,7 +63,14 @@ class scrollTrigger{
     if( !trigger.classList.contains(this.scrolledClass) ){
       const Rect = trigger.getBoundingClientRect();
       if( this._isReachX(Rect.left) || this._isReachY(Rect.top)){
-        trigger.classList.add(this.scrolledClass);
+        const delay = Number(trigger.getAttribute(this.delayAttr));
+        if( delay !== undefined && delay !== null && delay !== '' && delay !== NaN ){
+          setTimeout(()=>{
+            trigger.classList.add(this.scrolledClass);
+          },delay);
+        }else{
+          trigger.classList.add(this.scrolledClass);
+        }
         const syncId = trigger.getAttribute(this.syncAttr);
         if( syncId !== undefined && syncId !== null && syncId !== ''){
           this._addClassSyncItems(syncId);
@@ -75,11 +83,17 @@ class scrollTrigger{
     const syncItems = document.querySelectorAll(`[${this.syncAttr}="${syncId}"]`);
     if(syncItems.length){
       syncItems.forEach(item=>{
-        item.classList.add(this.scrolledClass);
+        const delay = Number(item.getAttribute(this.delayAttr));
+        if( delay !== undefined && delay !== null && delay !== '' && delay !== NaN ){
+          setTimeout(()=>{
+            item.classList.add(this.scrolledClass);
+          },delay);
+        }else{
+          item.classList.add(this.scrolledClass);
+        }
       });
     }
   }
-
 
   _convertPosition(position){
     if( position.endsWith('%') ){

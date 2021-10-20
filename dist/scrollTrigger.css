@@ -4,10 +4,6 @@
   animation-timing-function: cubic-bezier(0.14, 0.71, 0.25, 1);
 }
 
-.delay-0\.5s {
-  animation-delay: 0.5s;
-}
-
 @keyframes fade-btt {
   0% {
     transform: translateY(40px);
