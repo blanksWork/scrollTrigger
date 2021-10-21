@@ -110,12 +110,7 @@ img {
 }
 
 .wrapper {
-  overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.wrapper::-webkit-scrollbar {
-  display: none;
+  overflow: hidden;
 }
 .wrapper > hr {
   width: 100%;

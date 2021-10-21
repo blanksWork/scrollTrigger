@@ -83,8 +83,11 @@ var scrollTrigger = /*#__PURE__*/function () {
 
       if (!trigger.classList.contains(this.scrolledClass)) {
         var Rect = trigger.getBoundingClientRect();
+        var BodyRect = document.body.getBoundingClientRect();
+        var scrollLimitX = Math.floor(BodyRect.right) - 50;
+        var scrollLimitY = Math.floor(BodyRect.bottom) - 50;
 
-        if (this._isReachX(Rect.left) || this._isReachY(Rect.top)) {
+        if (this._isReachX(Rect.left) || this._isReachY(Rect.top) || scrollLimitX < window.innerWidth && scrollLimitY < window.innerHeight) {
           var delay = Number(trigger.getAttribute(this.delayAttr));
 
           if (delay !== undefined && delay !== null && delay !== '' && delay !== NaN) {
